@@ -12,6 +12,7 @@ For simple trainings, lots of those will be of low importance, but as you push f
 3. [Choosing a training method](#choosing-a-training-method)
 4. [Monitoring the training](#monitoring-the-training)
 5. [Evaluating the results](#evaluating-the-results)
+6. [Terminology](#terminology)
 
 
 # Safety Note
@@ -211,7 +212,7 @@ Depending on those results, you may want to modify your dataset :
 - If your concept shows unprompted, you want to add or improve your regularization data.
 - If your concept has most of the time some specific feature you don't want, look for examples of this feature in the dataset. Either remove those pictures, or add another token in the caption to describe that bias.
 
-#Terminology
+# Terminology
 
 Term | Meaning
 -- | --
