@@ -6,13 +6,31 @@ The training process for Stable Diffusion consists of multiple steps, and even i
 
 For simple trainings, lots of those will be of low importance, but as you push further the limits, you'll want to understand each of the following principles :
 
-0. [Safety note](#safety-note)
-1. [Defining a concept](#defining-a-concept)
-2. [Making a dataset](#making-a-dataset)
-3. [Choosing a training method](#choosing-a-training-method)
-4. [Monitoring the training](#monitoring-the-training)
-5. [Evaluating the training](#evaluating-the-training)
-6. [Terminology](#terminology)
+* [Safety note](#safety-note)
+* [Defining a concept](#defining-a-concept)
+  * [What is a concept ?](#what-is-a-concept-)
+  * [How many concepts can I train at once ?](#how-many-concepts-can-i-train-at-once-)
+  * [Full Fine-Tuning](#full-fine-tuning)
+* [Making a dataset](#making-a-dataset)
+  * [Dataset size](#dataset-size)
+  * [Captioning](#captioning)
+  * [Attention](#attention)
+  * [Regularization](#regularization)
+  * [Dataset diversity](#dataset-diversity)
+* [Choosing a training method](#choosing-a-training-method)
+  * [Full Fine-Tuning](#full-fine-tuning-1)
+  * [Dreambooth](#dreambooth)
+  * [LoRA](#lora-fine-tuning-with-a-smaller-size)
+  * [Hypernetworks](#hypernetwork-additional-output-conditioning)
+  * [Textual Inversion](#textual-inversion-better-accessing-of-the-model-weights)
+* [Monitoring the training](#monitoring-the-training)
+  * [Learning Rate](#learning-rate)
+  * [Steps/Epochs/Repeats](#stepsepochsrepeats)
+  * [Saving checkpoints](#saving-checkpoints)
+  * [Monitoring the Loss value](#monitoring-the-loss-value)
+  * [Control pictures](#control-pictures)
+* [Evaluating the training](#evaluating-the-training)
+* [Terminology](#terminology)
 
 
 # Safety Note
@@ -209,7 +227,7 @@ Those 3 elements are linked and will represent the length of the training.
 * A ***repeat*** is how many times a given picture is taught to the model during an epoch.
 * An ***epoch*** is training the model on the whole ***dataset*** as many times as repeats.
 
-# Saving checkpoints
+## Saving checkpoints
 During the training, you have parameters to ask the training to save every X epochs, starting on epoch Y. It's quite important to do some saving regularly like this, in order to have a fallback when you have ***overtrained*** the model.
 
 ## Monitoring the Loss value
