@@ -45,6 +45,7 @@ Links to .safetensors convertors :
 * [Hugging Face space](https://huggingface.co/spaces/safetensors/convert)
 * [Extension in Automatic1111](https://github.com/Akegarasu/sd-webui-model-converter)
 
+[Back to index](#introduction)
 
 # Defining a concept
 
@@ -65,6 +66,8 @@ Training on other things too (***regularization/class*** data) can help prevent 
 ## Full Fine-Tuning
 
 Usually, you train only on a few ***concepts*** at once. ***Full Fine-Tuning***, on the contrary, aims at training the whole ***model*** on every ***concept*** it can. It requires an enormous ***dataset*** to do correctly and keep all concepts high quality.
+
+[Back to index](#introduction)
 
 # Making a dataset
 
@@ -120,6 +123,8 @@ The good approach is to try to not have any duplication of any kind, and keep ev
 This can be a difficult task, and you may need to come back to this step once you finish your training and see ***biases*** in the results
 
 [Nitrosocke's guide](https://github.com/nitrosocke/dreambooth-training-guide/blob/main/README.md)
+
+[Back to index](#introduction)
 
 # Choosing a training method
 
@@ -211,6 +216,8 @@ Textual Inversion is considered the weakest technique as it does not directly mo
 
 [Integrated in the training tab of Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
+[Back to index](#introduction)
+
 # Monitoring the training
 
 During the training session, there are multiple parameters that play an important role, and that are present in most tools :
@@ -248,6 +255,8 @@ While the training is happening, you may have some samples that get created. The
 
 If the pictures that were fuzzy start to show your trained concept, then your concept is bleeding into the model, meaning it will start to show up without being prompted for. This means you need to add better regularization data.
 
+[Back to index](#introduction)
+
 # Evaluating the training
 Once you are done training, you will have one or more ***checkpoints*** to compare, at different ***epochs*** trained.
 Load those up into your UI, and use the X/Y/Z plot feature, in order to compare the quality of each ***checkpoint*** on the same prompt and seed.
@@ -257,6 +266,8 @@ Depending on those results, you may want to modify your dataset :
 - If your ***concept*** shows but has some strange burned outline, and feels too similar to your dataset, you have overtrained. You may want to look for duplicates in your dataset that would present the features that start to burn first, and add more variety on it. Sometimes, this means just removing a picture.
 - If your ***concept*** shows unprompted, you want to add or improve your regularization data.
 - If your ***concept*** has most of the time some specific feature you don't want, look for examples of this feature in the dataset. Either remove those pictures, or add another token in the caption to describe that ***bias*** and diverge the ***attention*** to it.
+
+[Back to index](#introduction)
 
 # Terminology
 
@@ -289,3 +300,5 @@ Style | Any concept that conditions how an image look, how the subject in that i
 Subject | Any concept that is the main thing represented by an image. Examples : "a car", "my mother", ...
 Token | Common sequences of characters found in text. Usually about 3/4th of a word, they are the parts that constitue your prompt, and the keys to accessing the weights you are training. Choosing a token is choosing a word to train the model on.
 Weights | Mathematical numbers that represents what an AI's model has retained. Those numbers are what drives SD into making its choices while making pictures and following a prompt.
+
+[Back to index](#introduction)
