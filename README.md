@@ -166,7 +166,9 @@ Currently, it's regarded as one of the best options available in terms of balanc
 * GPU cost: medium (8GB or more)
 
 [Original github](https://github.com/cloneofsimo/lora)
+
 [Diffusers library](https://huggingface.co/docs/diffusers/training/lora)
+
 [Kohya_ss library](https://github.com/kohya-ss/sd-scripts)
 
 ## HyperNetwork: additional output conditioning
@@ -188,6 +190,7 @@ Textual Inversion is considered the weakest technique as it does not directly mo
 * GPU cost: medium (8GB or more)
 
 [Diffusers library](https://huggingface.co/docs/diffusers/training/text_inversion)
+
 [Integrated in the training tab of Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Textual-Inversion)
 
 # Monitoring the training
