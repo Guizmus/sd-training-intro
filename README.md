@@ -11,7 +11,7 @@ For simple trainings, lots of those will be of low importance, but as you push f
 2. [Making a dataset](#making-a-dataset)
 3. [Choosing a training method](#choosing-a-training-method)
 4. [Monitoring the training](#monitoring-the-training)
-5. [Evaluating the results](#evaluating-the-results)
+5. [Evaluating the training](#evaluating-the-training)
 6. [Terminology](#terminology)
 
 
