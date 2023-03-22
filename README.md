@@ -1,6 +1,6 @@
 # Introduction
 
-In this guide, every ***emphased word*** is defined in the [Terminology page](terminology.md).
+In this guide, every ***emphased word*** is defined in the [Terminology section](#terminology).
 
 The training process for Stable Diffusion consists of multiple steps, and even if the method you choose may change, the concepts you'll encounter will remain the same.
 
