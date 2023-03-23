@@ -25,6 +25,7 @@ For simple trainings, lots of those will be of low importance, but as you push f
   * [Textual Inversion](#textual-inversion-better-accessing-of-the-model-weights)
 * [Monitoring the training](#monitoring-the-training)
   * [Learning Rate](#learning-rate)
+  * [Training by batch](#training-by-batch)
   * [Steps/Epochs/Repeats](#stepsepochsrepeats)
   * [Saving checkpoints](#saving-checkpoints)
   * [Monitoring the Loss value](#monitoring-the-loss-value)
@@ -228,6 +229,18 @@ The ***learning rate*** is the speed at which your model will be trained. A high
 - the training can go faster into the ***overtrained*** state.
 - the training can fail completely and diverge, meaning it manages less and less to draw pictures like you wanted.
 
+## Training by batch
+
+Like when making pictures, you have access to the concept of Batch during training. A Batch of picture is a group of similar size pictures that will be trained on together. Having more than one single picture per batch is good for quality, but it has diminishing returns after a point.
+
+Two main parameters let you change this :
+- ***Batch Size***. This will take more VRAM, and train all the pictures in parallel, at the same time on your GPU. This is the fastest option, but more demanding on hardware.
+- ***Gradiant Accumulation Steps*** (GAS for short). This will act the same, but sequentially and not in parallel, training multiple pictures one after the other before impacting the model with the changes for all at once.
+
+Those two parameters work together, and the resulting total picture count per batch is equal to Batch Size multiplied by GAS.
+
+To optimize speed and quality of the training, you should have your Batch size to the highest value your computer can handle, and use GAS as a multiplier to your batch size. Since your dataset will be split in batches, it's more efficient to make total picture count per batch a divider of your dataset size.
+
 ## Steps/Epochs/Repeats
 Those 3 elements are linked and will represent the length of the training.
 * A ***step*** is training the model on one batch of pictures one time.
@@ -274,6 +287,7 @@ Depending on those results, you may want to modify your dataset :
 Term | Meaning
 -- | --
 Attention | Each step of the training, a batch of pictures is trained, and the weights of the model move a little. Those changes happen slower or faster, depending on the learning rate you use. This "budget" of changes that could happen on a single step is called Attention.
+Batch Size | Number of pictures to train in parallel on your GPU. Faster training, more quality, but VRAM intensive.
 Bias | Tendency of a model to give out specific features without prompting for them. For example a woman in a Disney model has a "princess" bias. Some can be worked on, but some are inherent to the chosen concept.
 Bleeding | When your concept shows unprompted, it has "bled" into the rest of the model. It needs more Regularisation data.
 Caption | A list of tokens to describe a picture. Usually stored in a text file named the same as the picture, or put as the filename of the picture.
@@ -288,6 +302,7 @@ Embeddings | Files that are used in addition to a model. They represent weights 
 Epoch | An epoch is training on your whole dataset 1 time per repeat.
 Fine-tuning | Modifying a model. Changing the weights inside a model to make it be able to understand a new concept or more. Same meaning as Training.
 Full Fine-Tuning | Altering the whole model on almost every concept it understands.
+Gradiant Accumulation Steps | Number of batches of pictures to train sequentially before impacting the model with the changes. Functionally similar to Batch size, but slower, and without VRAM impact.
 Instance | Pictures of the main concept you are training. For example pictures of "Souni" my cat.
 Learning rate | The learning rate is the speed at witch the model is trained, it represents how much the weights are able to change per step.
 Loss | Mathematical value representing how close your model is to making pictures of the dataset. The lower the value, the best it performs.
