@@ -149,6 +149,8 @@ Moreover, it supports various types of diffusers, including DDIM, U-Net, and Res
 
 [EveryDream](https://github.com/victorchall/EveryDream2trainer)
 
+[notebook](https://colab.research.google.com/github/nawnie/EveryDream2trainer/blob/main/Train_Colab.ipynb)
+
 [Difference : EveryDream & Dreambooth](https://github.com/victorchall/EveryDream2trainer/blob/main/doc/NOTDREAMBOOTH.md)
 
 ## Dreambooth
@@ -172,7 +174,11 @@ It outputs a .ckpt file, or diffusers.
 
 [ShivamShrirao](https://github.com/ShivamShrirao/diffusers/tree/main/examples/dreambooth)
 
+[notebook](https://github.com/ShivamShrirao/diffusers/blob/main/examples/dreambooth/DreamBooth_Stable_Diffusion.ipynb)
+
 [TheLastBen](https://github.com/TheLastBen/fast-stable-diffusion)
+
+[notebook](https://colab.research.google.com/github/TheLastBen/fast-stable-diffusion/blob/main/fast-DreamBooth.ipynb)
 
 ## LoRA: fine-tuning with a smaller size
 
@@ -194,6 +200,8 @@ Currently, it's regarded as one of the best options available in terms of balanc
 [Diffusers library](https://huggingface.co/docs/diffusers/training/lora)
 
 [Kohya_ss library](https://github.com/kohya-ss/sd-scripts)
+
+[notebook](https://colab.research.google.com/github/Linaqruf/kohya-trainer/blob/main/kohya-dreambooth.ipynb )
 
 ## HyperNetwork: additional output conditioning
 
